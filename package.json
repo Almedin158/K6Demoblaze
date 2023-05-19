@@ -1,0 +1,11 @@
+{
+  "name": "k6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "k6 run test/k6.js"
+  },
+  "author": "Almedin Alikadić",
+  "license": "ISC"
+}
