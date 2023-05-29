@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import {generateTimer} from '../Utilities.js'
+import { generateTimer } from '../Utilities.js'
 
 export function Logout() {
   const url = 'https://www.demoblaze.com/index.html';
@@ -22,7 +22,7 @@ export function Logout() {
     'TE': 'trailers',
   };
 
-  sleep(generateTimer(500,1000)/1000);
+  sleep(generateTimer(500, 1000) / 1000);
 
   const response = http.get(url, { headers });
 

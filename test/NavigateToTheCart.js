@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import {generateTimer} from '../Utilities.js'
+import { generateTimer } from '../Utilities.js'
 
 export function NavigateToTheCart() {
   const url = 'https://www.demoblaze.com/cart.html';
@@ -21,7 +21,7 @@ export function NavigateToTheCart() {
     'Cache-Control': 'no-cache',
   };
 
-    sleep(generateTimer(500,1000)/1000);
+  sleep(generateTimer(500, 1000) / 1000);
 
   const response = http.get(url, { headers });
 }

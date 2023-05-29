@@ -1,8 +1,8 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import {generateTimer} from '../Utilities.js'
+import { generateTimer } from '../Utilities.js'
 
-export function NavigateToNextPage () {
+export function NavigateToNextPage() {
   const url = 'https://api.demoblaze.com/pagination';
   const headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0",
@@ -25,7 +25,7 @@ export function NavigateToNextPage () {
     id: 9,
   };
 
-  sleep(generateTimer(3000,8000)/1000);
+  sleep(generateTimer(3000, 8000) / 1000);
 
   const response = http.post(url, JSON.stringify(payload), { headers });
 

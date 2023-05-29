@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import {GetUsername} from './LoginToTheApplication.js';
-import {generateTimer} from '../Utilities.js'
+import { GetUsername } from './LoginToTheApplication.js';
+import { generateTimer } from '../Utilities.js'
 
 export function PerformPurchase() {
   const url = 'https://api.demoblaze.com/deletecart';
@@ -26,7 +26,7 @@ export function PerformPurchase() {
     cookie: GetUsername(),
   };
 
-  sleep(generateTimer(10000,20000)/1000);
+  sleep(generateTimer(10000, 20000) / 1000);
 
   const response = http.post(url, JSON.stringify(payload), { headers });
 }

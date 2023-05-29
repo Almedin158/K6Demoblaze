@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import {GetToken} from './LoginToTheApplication.js';
-import {generateTimer} from '../Utilities.js'
+import { GetToken } from './LoginToTheApplication.js';
+import { generateTimer } from '../Utilities.js'
 
 export function ValidateThaTPhoneIsAddedToCart() {
   const url = 'https://api.demoblaze.com/viewcart';
@@ -27,7 +27,7 @@ export function ValidateThaTPhoneIsAddedToCart() {
     flag: true,
   };
 
-  sleep(generateTimer(500,1000)/1000);
+  sleep(generateTimer(500, 1000) / 1000);
 
   const response = http.post(url, JSON.stringify(payload), { headers });
 }

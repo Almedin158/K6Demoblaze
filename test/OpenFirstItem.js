@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import {generateTimer} from '../Utilities.js'
+import { generateTimer } from '../Utilities.js'
 
 export function OpenFirstItem() {
   const url = 'https://www.demoblaze.com/prod.html?idp_=1';
@@ -21,7 +21,7 @@ export function OpenFirstItem() {
     'Cache-Control': 'no-cache',
   };
 
-  sleep(generateTimer(500,1000)/1000);
+  sleep(generateTimer(500, 1000) / 1000);
 
   const response = http.get(url, { headers });
 }
