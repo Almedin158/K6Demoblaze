@@ -10,8 +10,11 @@ import { NavigateToLaptopsCategory } from './NavigateToLaptopsCategory.js';
 import { NavigateToNextPage } from './NavigateToNextPage.js'
 
 export let options = {
-    vus:100,
-    duration:'1m'
+    stages: [
+      {duration:'1m', target: 10},
+      {duration:'8m', target: 10},
+      {duration:'1m', target: 0}
+    ]
   };
 
 var vu = __VU%10;
@@ -20,10 +23,8 @@ if(vu==0){
   vu = 10;
 }
 
-console.log(vu);
-
 export default function(){
-    
+  console.log("Started virtual user number: "+__VU);
     LoginToTheApplication(vu);
     if(generateRandomNumber()<=7)
       PurchaseFlow();
@@ -31,6 +32,7 @@ export default function(){
       PaginationFlow();
     }
     Logout();
+    console.log("Ended virtual user number: "+__VU);
 }
 
 export function PurchaseFlow(){
