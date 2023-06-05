@@ -30,4 +30,8 @@ export function NavigateToLaptopsCategory() {
   const response = http.post(url, JSON.stringify(payload), { headers });
 
   check(response, { 'status was 200': (r) => r.status == 200 });
+
+  check(response, 
+    { 'navigated to the laptops category:': (r) => r.body.includes('"cat":"notebook"')}
+  );
 }

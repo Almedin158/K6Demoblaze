@@ -41,9 +41,16 @@ export function LoginToTheApplication(vu) {
 
   const response = http.post(url, JSON.stringify(payload), { headers });
 
-  if (authToken != null && authToken != undefined) {
-    authToken = response.body.substring(13, 29);
-  }
+  check(response, {
+    'status was 200': (r) => r.status == 200
+  });
+
+  check(response, 
+    {
+      'auth token received:' : (r) => r.body.includes('"Auth_token:')
+    });
+
+  authToken = response.body.substring(13, 29);
 }
 
 export function GetUsername() {

@@ -30,4 +30,8 @@ export function ValidateThaTPhoneIsAddedToCart() {
   sleep(generateTimer(500, 1000) / 1000);
 
   const response = http.post(url, JSON.stringify(payload), { headers });
+
+  check(response, 
+    { 'product successfully added to cart:': (r) => r.body.includes('"prod_id":1')}
+  );
 }

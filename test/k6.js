@@ -11,9 +11,9 @@ import { NavigateToNextPage } from './NavigateToNextPage.js'
 
 export let options = {
   stages: [
-    { duration: '1m', target: 5000 },
-    { duration: '8m', target: 5000 },
-    { duration: '1m', target: 0 }
+    { duration: '20m', target: 5000 },
+    {duration:'90m', target:5000},
+    {duration:'10m', target:0}
   ]
 };
 
@@ -24,7 +24,7 @@ if (vu == 0) {
 }
 
 export default function () {
-  console.log("Started virtual user number: " + __VU);
+  //console.log("Started virtual user number: " + __VU);
   LoginToTheApplication(vu);
   if (generateRandomNumber() <= 7)
     PurchaseFlow();
@@ -32,7 +32,7 @@ export default function () {
     PaginationFlow();
   }
   Logout();
-  console.log("Ended virtual user number: " + __VU);
+  //console.log("Ended virtual user number: " + __VU);
 }
 
 export function PurchaseFlow() {
