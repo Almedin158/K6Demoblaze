@@ -11,9 +11,9 @@ import { NavigateToNextPage } from './NavigateToNextPage.js'
 
 export let options = {
   stages: [
-    { duration: '20m', target: 5000 },
-    {duration:'90m', target:5000},
-    {duration:'10m', target:0}
+    { duration: '10s', target: 50 },
+    {duration:'45s', target:50},
+    {duration:'5s', target:0}
   ]
 };
 
